@@ -1,0 +1,93 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    position:relative;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+.imageWallPaper{
+    height:100vh;
+    width:100vw;
+    opacity:.8;
+}
+
+.casinoApp{
+    height:100vh;
+    width:100vw;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-evenly;
+    align-items:center;
+    background:rgb(255,0,0,0.7);
+    top:-100vh;
+}
+
+.headerh1{
+    font-size:40px;
+    text-transform:uppercase;
+    letter-spacing:4px;
+}
+
+.slotMachine{
+    width:75%;
+    margin:0 auto;
+    height:150px;
+    outline:1px solid black;
+    background:lightgray;
+
+}
+
+.slotRow{
+    width:95%;
+    left:2%;
+    top:2%;
+    height:90%;
+    display:flex;
+    justify-content: space-evenly;
+    align-items:center;
+}
+
+.slot{
+    width:30%;
+    height:90%;
+    top:5%;
+    border:2px solid black;
+    border-radius:5%;
+}
+
+.rollSlot{
+    width:60%;
+    left:20%;
+}
+
+.slot_top, .slot_middle, .slot_bottom{
+    height:32%;
+    width:100%;
+    margin-bottom:1%;
+    display:flex;
+    align-items:center;
+    justify-content: space-evenly;
+}
+
+.message{
+    font-size:35px;
+    top:-280px;
+}
+
+.playbtn{
+    background:green;
+    height:20px;
+    top:-50px;
+    opacity:.9;
+    padding:0 2rem;
+    text-transform:uppercase;
+}
+
+footer > p{
+    background:lightgray;
+    border-radius:1rem;
+    padding:0 2rem;
+    text-transform:uppercase;
+    opacity:.7;
+}

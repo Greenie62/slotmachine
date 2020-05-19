@@ -6,7 +6,8 @@ var score=0;
 let slotSound=new Audio("./assets/siren.wav")
 let playBtn=document.querySelector(".playbtn")
 
-var colors=[{icon:'💰',color:'green'},{icon: '🏯',color:'blue'},{icon:'🏖' ,color:'yellow'},{icon: '✈',color:'orange'},{icon:'🏝',color:'gray'},{icon: '💠' ,color:'purple'},{icon: '🌈',color: 'white'},{icon: '🏜' ,color:'black'}]
+var colors=[{icon:'💰',color:'green'},{icon: '🏯',color:'blue'},{icon:'🏖' ,color:'yellow'},{icon:'🏝',color:'gray'},{icon: '💠' ,color:'purple'},{icon: '🏜' ,color:'black'}]
+//,{icon: '🌈',color: 'white'}
 
 let iconOne=document.querySelectorAll(".iconOne")
 let iconTwo=document.querySelectorAll(".iconTwo")
@@ -98,7 +99,98 @@ function checkForJackPot(){
         score+=100;
         scoreSpan.innerHTML=score;
         document.querySelector(".message").innerHTML="WINNER!!💰" 
+        return;
     }
+
+    if(slot_one.children[0].style.backgroundColor === slot_two.children[0].style.backgroundColor && slot_one.children[0].style.backgroundColor === slot_three.children[0].style.backgroundColor){
+        console.log("jackpot!")
+        score+=100;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Wrong row, but close. +10!!💰" 
+        return;
+    }
+
+    if(slot_one.children[2].style.backgroundColor === slot_two.children[2].style.backgroundColor && slot_one.children[2].style.backgroundColor === slot_three.children[2].style.backgroundColor){
+        console.log("jackpot!")
+        score+=100;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Wrong row, but close. +10!!💰" 
+        return;
+    }
+
+    if(slot_one.children[2].style.backgroundColor === slot_two.children[2].style.backgroundColor && slot_one.children[2].style.backgroundColor === slot_three.children[2].style.backgroundColor){
+        console.log("jackpot!")
+        score+=100;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="WINNER!!💰 +100" 
+        return;
+    }
+
+    if(slot_one.children[0].style.backgroundColor === slot_two.children[1].style.backgroundColor && slot_two.children[1].style.backgroundColor === slot_two.children[2].style.backgroundColor){
+        score+=25;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Hmm, kinda fun! +25!!💰"
+        return;
+    }
+
+    if(slot_one.children[2].style.backgroundColor === slot_two.children[1].style.backgroundColor && slot_two.children[1].style.backgroundColor === slot_two.children[0].style.backgroundColor){
+        score+=25;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Hmm, thats worth something. +25!!💰"
+        return;
+    }
+
+    if(slot_one.children[0].style.backgroundColor === slot_one.children[1].style.backgroundColor && slot_one.children[1].style.backgroundColor === slot_two.children[0].style.backgroundColor){
+        score+=25;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Ohh, a colored column! +25!!💰"
+        return;
+    }
+
+    if(slot_two.children[0].style.backgroundColor === slot_two.children[1].style.backgroundColor && slot_two.children[1].style.backgroundColor === slot_two.children[2].style.backgroundColor){
+        score+=25;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Ohh, a colored column! +25!!💰"
+        return;
+    }
+
+    if(slot_three.children[0].style.backgroundColor === slot_three.children[1].style.backgroundColor && slot_three.children[1].style.backgroundColor === slot_three.children[2].style.backgroundColor){
+        score+=25;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Ohh, a colored column! +25!!💰"
+        return;
+    }
+
+    //lightning bolts
+    if(slot_one.children[0].style.backgroundColor === slot_two.children[0].style.backgroundColor && slot_two.children[0].style.backgroundColor === slot_two.children[1].style.backgroundColor && slot_two.children[1].style.backgroundColor === slot_three.children[1].style.backgroundColor){
+        score+=15;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Lightning points! +15!!💰"
+        return;
+    }
+
+    if(slot_three.children[0].style.backgroundColor === slot_two.children[0].style.backgroundColor && slot_two.children[0].style.backgroundColor === slot_two.children[1].style.backgroundColor && slot_two.children[1].style.backgroundColor === slot_one.children[1].style.backgroundColor){
+        score+=15;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Lightning points! +15!!💰"
+        return;
+    }
+
+    if(slot_one.children[2].style.backgroundColor === slot_two.children[2].style.backgroundColor && slot_two.children[2].style.backgroundColor === slot_two.children[1].style.backgroundColor && slot_two.children[1].style.backgroundColor === slot_three.children[1].style.backgroundColor){
+        score+=15;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Lightning points! +15!!💰"
+        return;
+    }
+
+    if(slot_three.children[2].style.backgroundColor === slot_two.children[2].style.backgroundColor && slot_two.children[2].style.backgroundColor === slot_two.children[1].style.backgroundColor && slot_two.children[1].style.backgroundColor === slot_one.children[1].style.backgroundColor){
+        score+=15;
+        scoreSpan.innerHTML=score;
+        document.querySelector(".message").innerHTML="Lightning points! +15!!💰"
+        return;
+    }
+    
+    
     else{
         console.log("Losr!!")
         document.querySelector(".message").innerHTML="LOSER!😧" 
